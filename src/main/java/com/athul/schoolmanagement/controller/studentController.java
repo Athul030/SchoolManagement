@@ -17,6 +17,7 @@ public class studentController {
 
     private final StudentService studentService;
 
+    //add a new student
     @PostMapping("/student")
     public ResponseEntity<?> addStudent(@Valid @RequestBody StudentDTO studentDTO, BindingResult result) {
 
@@ -24,12 +25,12 @@ public class studentController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result.getAllErrors());
         }
         StudentDTO savedStudent = studentService.addStudent(studentDTO);
-        //studentDTO is returned if need any data of stored student
+        //studentDTO is returned,if data of stored student is required in the response
         return ResponseEntity.status(HttpStatus.CREATED).body(savedStudent);
 
     }
 
-    //considering the id, name or class is coming as a search word
+    //considering the id, name or class is coming as a search word , search students
     @GetMapping("/search/{searchTerm}")
     public ResponseEntity<?> searchStudents(@PathVariable String searchTerm) {
         try {
@@ -51,6 +52,8 @@ public class studentController {
         }
     }
 
+
+    //update the details of student with id
     @PutMapping("/student/{id}")
     public ResponseEntity<?> updateStudent(@Valid @PathVariable Long id, @RequestBody StudentDTO studentDTO, BindingResult result){
 

@@ -4,6 +4,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+//config for model mapper to easily map from model to DTO objects
+
+
 @Configuration
 public class AppConfig {
 

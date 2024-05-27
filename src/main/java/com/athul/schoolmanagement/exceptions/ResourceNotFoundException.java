@@ -11,7 +11,7 @@ public class ResourceNotFoundException extends RuntimeException{
     String textData;
 
     public ResourceNotFoundException(Long numberData){
-        super(String.format("Student(s) not found with  %d ",numberData));
+        super(String.format("Student not found with  %d ",numberData));
         this.numberData=numberData;
     }
 

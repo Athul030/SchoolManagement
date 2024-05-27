@@ -10,7 +10,10 @@ import java.util.List;
 @Repository
 public interface StudentRepo extends JpaRepository<Student, Long> {
 
+    //query to use if full name is used for searching, unused for now
     List<Student> findByName(String name);
+
+    //query to use if full class name is used for searching, unused for now
     List<Student> findByClassName(String className);
 
     // searched using spring data JPA

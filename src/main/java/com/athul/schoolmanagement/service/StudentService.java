@@ -43,6 +43,7 @@ public class StudentService {
     public StudentDTO updateStudentDetails(Long id, StudentDTO studentDTO) {
         Student existingStudent  = studentRepo.findById(id).orElseThrow(()->new ResourceNotFoundException(id));
 
+        //dont change values if null values are present in respective field
         if (studentDTO.getName() != null) {
             existingStudent.setName(studentDTO.getName());
         }
