@@ -10,6 +10,7 @@ Date fields (dateOfBirth and joiningDate) are expected in the format: YYYY-MM-DD
 1. Add Student: POST /student  (Add a new student to the database)
 Request body should be a JSON object.
 Example request body:
+##
     {
     "name": "John Doe",
     "dateOfBirth": "2000-05-15",
@@ -20,13 +21,18 @@ Example request body:
 2. Search Students: GET /search/{searchTerm}  (Retrieve student details based on ID, name or class)
 If the search term is numeric, it's considered as an ID. Otherwise, it's considered as a name or class.
 Example usage:
+##
 GET /search/123 - Search by ID.
+##
 GET /search/John - Search by name.
+##
 GET /search/Grade%2010 - Search by class.
 
 3. Update Student: PUT /student/{id} (Update details of an existing student)
 Path variable {id} represents the ID of the student to be updated.
+##
 Example request body:
+##
 {
 "name": "Jane Doe",
 "joiningDate": "2022-08-01"
